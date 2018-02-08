@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>NBA Stats</title>
+    <style type="text/css">
+      @import url('website.css');
+      @import url('database.css');
+    </style>
+  </head>
+
+  <body>
+
+    <div class="header">
+      <div class="middle">
+      <h1><span style='font-size:62px; background-color:#969e99; font-family: 'Hack-Regular'; '>Rockets #1</span></h1>
+    </div>
+    <br>
+
+    <input type="text" id="SearchBar" onkeyup="search()" placeholder="Search by name.." title="Type in a name">
+
+    <table id="Stats" style="width:100%">
+    <!--
+    <tr>
+      <th>Player</th>
+      <th>Pos</th>
+      <th>G</th>
+      <th>M/Gm</th>
+      <th>FGm</th>
+      <th>FGa</th>
+      <th>PCT</th>
+    </tr>
+
+    <tr>
+      <td>Harden, James</td>
+      <td>SG</td>
+      <td>45</td>
+      <td>36.0</td>
+      <td>422</td>
+      <td>940</td>
+      <td>.449</td>
+    </tr>
+    <tr>
+      <td>Paul, Chris</td>
+      <td>PG</td>
+      <td>34</td>
+      <td>32.0</td>
+      <td>222</td>
+      <td>478</td>
+      <td>.464</td>
+    </tr>
+    //-->
+    <tr>
+      <th><button type= "button" onclick = "sortByName(0)">Team Name</button></th>
+      <th><button type= "button" onclick = "sortByScore(1)">W</button></th>
+      <th><button type= "button" onclick = "sortByScore(2)">L</button></th>
+    </tr>
+
+
+    <tr>
+      <td>Cleveland Cavaliers</td>
+      <td>57</td>
+      <td>25</td>
+    </tr>
+    <tr>
+      <td>Toronto Raptors</td>
+      <td>56</td>
+      <td>26</td>
+    </tr>
+    <tr>
+      <td>Charlotte Hornets</td>
+      <td>48</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>Atlanta Hawks</td>
+      <td>48</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>Miami Heat</td>
+      <td>48</td>
+      <td>34</td>
+    </tr>
+    <tr>
+      <td>Boston Celtics</td>
+      <td>48</td>
+        <td>34</td>
+    </tr>
+    <tr>
+      <td>Indiana Pacers</td>
+      <td>45</td>
+      <td>37</td>
+    </tr>
+    <tr>
+      <td>Detroit Pistons</td>
+      <td>44</td>
+      <td>38</td>
+    </tr>
+    <tr>
+      <td>Chicago Bulls</td>
+      <td>42</td>
+      <td>40</td>
+    </tr>
+    <tr>
+      <td>Washington Wizards</td>
+      <td>41</td>
+      <td>41</td>
+    </tr>
+    <tr>
+      <td>Orlando Magic</td>
+      <td>35</td>
+      <td>47</td>
+    </tr>
+    <tr>
+      <td>Milwaukee Bucks</td>
+      <td>33</td>
+      <td>49</td>
+    </tr>
+    <tr>
+      <td>New York Knicks</td>
+      <td>32</td>
+      <td>50</td>
+    </tr>
+    <tr>
+      <td>Brooklyn Nets</td>
+      <td>21</td>
+      <td>61</td>
+    </tr>
+    <tr>
+      <td>Philadelphia 76ers</td>
+      <td>10</td>
+      <td>72</td>
+    </tr>
+    <tr>
+      <td>Golden State Warriors</td>
+      <td>73</td>
+      <td>9</td>
+    </tr>
+    <tr>
+      <td>San Antonio Spurs</td>
+      <td>67</td>
+      <td>15</td>
+    </tr>
+    <tr>
+      <td>Oklahoma City Thunder</td>
+      <td>55</td>
+      <td>27</td>
+      </tr>
+    <tr>
+      <td>Los Angeles Clippers</td>
+      <td>53</td>
+      <td>29</td>
+    </tr>
+    <tr>
+      <td>Portland Trail Blazers</td>
+      <td>44</td>
+      <td>38</td>
+    </tr>
+    <tr>
+        <td>Dallas Mavericks</td>
+        <td>42</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Memphis Grizzlies</td>
+        <td>42</td>
+        <td>40</td>
+    </tr>
+    <tr>
+        <td>Houston Rockets</td>
+        <td>1000</td>
+        <td>41</td>
+    </tr>
+    <tr>
+        <td>Utah Jazz</td>
+        <td>40</td>
+        <td>42</td>
+    </tr>
+    <tr>
+        <td>Denver Nuggets</td>
+        <td>33</td>
+        <td>49</td>
+    </tr>
+    <tr>
+        <td>Sacramento Kings</td>
+        <td>33</td>
+        <td>49</td>
+    </tr>
+    <tr>
+        <td>New Orleans Pelicans</td>
+        <td>30</td>
+        <td>52</td>
+    </tr>
+    <tr>
+        <td>Minnesota Timberwolves</td>
+        <td>29</td>
+        <td>53</td>
+    </tr>
+    <tr>
+        <td>Phoenix Suns</td>
+        <td>23</td>
+        <td>59</td>
+    </tr>
+    <tr>
+        <td>Los Angeles Lakers</td>
+        <td>17</td>
+        <td>65</td>
+    </tr>
+  </table>
+
+  <script type="text/javascript" src="tablestats.js"></script>
+  </body>
+</html>

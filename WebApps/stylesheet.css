@@ -1,0 +1,39 @@
+* {
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    border-style: solid;
+    border-radius: 20px;
+}
+
+h2 {
+  text-shadow: 10px 10px 3px black;
+}
+
+#firstP {
+    color: yellow;
+    position: absolute;
+}
+
+p {
+    color: red; /*!important; dont use important*/
+    background-color: blue;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.text {
+    color: green;
+    background-color: blue;
+}
+
+body {
+  background-color:#7FFFD4;
+}
+
+span {
+  background-color: pink;
+}
+
+p:hover {
+  background-color: green;
+  transform: rotate(45deg);
+}
