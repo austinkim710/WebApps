@@ -1,0 +1,36 @@
+* {
+	font-family: 'serif';
+	border-style: solid;
+	border-radius: 20px;
+}
+
+h2 {
+	text-shadow: 10px 10px 5px black;
+}
+
+#firstP {
+	color: white;
+	position: absolute;
+	left: 50px;
+	top: 200px;
+}
+
+p {
+	color: #ff00ff;
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.text {
+	color: green;
+	background-color: blue;
+}
+
+span {
+	background-color: pink;
+}
+
+p:hover {
+	background-color: green;
+	transform: rotate(45deg);
+}
