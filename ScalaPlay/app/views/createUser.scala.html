@@ -1,0 +1,26 @@
+
+@(users: scala.collection.mutable.Map[String,String], userForm: Form[UserData])(implicit request: RequestHeader)
+
+@main("Account Creation") {
+  <head>
+    <title>Account Creation page for Tasks List</title>
+    @*<style type="text/css">
+      import url('website.css');
+    </style>
+    *@
+  </head>
+
+  <h1>
+    Please create a new username and password!
+  </h1>
+
+  <form id="table-form" action="@routes.TaskController.createUser()" method="POST">
+	  @helper.CSRF.formField
+	  New Username:<input type="text" name="username">
+	  <br>
+	  New Password:<input type="password" name="password">
+	  <input type="submit" value="Submit">
+  </form>
+
+
+}

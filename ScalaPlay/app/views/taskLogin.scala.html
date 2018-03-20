@@ -1,0 +1,30 @@
+@(users: scala.collection.mutable.Map[String,String], userForm: Form[UserData])(implicit request: RequestHeader)
+
+@main("Login page") {
+  <head>
+    <title>Login page for To Do List</title>
+   
+  </head>
+
+  <h1>
+    Please enter your login credentials
+  </h1>
+	
+  <form id="table-form" action="@routes.TaskController.login()" method="POST">
+	  @helper.CSRF.formField
+	  Username:<input type="text" name="username">
+	  <br>
+	  Password:<input type="password" name="password">
+	  <input type="submit" value="Submit">
+  </form>
+	<br>
+  <form action="@routes.TaskController.createUserPage" >
+	<p>Don't have an existing account? Create one!</p>
+	<input type="submit" value="Create">
+	@*
+	Username:<input type="text" name="username">
+	<br>
+	Password:<input type="password" name="password">
+	<input type="submit" value="Create">*@
+
+}

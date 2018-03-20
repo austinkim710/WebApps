@@ -1,0 +1,41 @@
+@* tempTable Template File *@
+@(tasks: scala.collection.mutable.Buffer[String], user: String)(implicit request: MessagesRequestHeader)
+
+@main("Tasks Table") {
+  <h2>To Do List!</h2>
+  <h2>Currently logged in as @user</h2>
+  
+  <table>
+  	<tr>
+  	  @*<th>Password = @password</th>*@
+  	  <th>Task</th>
+  	  <form id="table-form" action="@routes.TaskController.createTask" method="POST">
+  	  	@helper.CSRF.formField
+  	  	Task to Do:<input type="text" name="newTask">
+  	  	<input type="submit" value="Add Task">
+  	  	</form>
+  	</tr>
+	
+
+
+  </table>
+  <table border="3">
+  	@for(t <- tasks) {
+  	  <tr>
+  	  	<form id="table-form" action="@routes.TaskController.deleteTask" method="POST">
+  	  	@helper.CSRF.formField
+  	  	<td>@t</td>
+  	  	<td><input type="submit" value="Delete"></td>
+  	  	<input type="hidden" name="markedTask" value=@t>
+  	  	</form>
+  	  </tr>
+  	}
+  </table>
+	<form id="table-form" action="@routes.TaskController.logout" method="GET">
+		@helper.CSRF.formField
+		<input type ="submit" value="Logout">
+	</form>
+	
+
+
+}

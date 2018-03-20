@@ -1,0 +1,11 @@
+@* createTask Template File *@
+@(tasklist: List[String])(implicit request: MessagesRequestHeader)
+
+@main("Task Creation") {
+	
+	<form id="table-form" action="@routes.TaskController.createTask()" method="POST">
+	Add a task:<input type="text" name="username"><input type="submit" value="Add Task">
+	</form>
+	
+	
+}
