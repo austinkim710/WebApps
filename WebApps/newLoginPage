@@ -1,0 +1,36 @@
+@()(implicit request: RequestHeader)
+
+
+@main("Login page") {
+  <head>
+    <title>Login page for To Do List</title>
+    <style type="text/css">
+      @*@import url('website.css');*@
+    </style>
+  </head>
+
+  <h1>
+    Please enter login credentials
+  </h1>
+
+  <form id="table-form" action="@routes.TaskController.taskPage" method="POST">
+	  @helper.CSRF.formField
+	  Username:<input type="text" name="username">
+	  <br>
+	  Password:<input type="password" name="password">
+	  <input type="submit" value="Submit">
+  </form>
+
+
+}
+
+
+
+@* 1. Make a view page then go to controller (HomeController) *@
+
+
+######### Routes for Tasks ###########
+
+GET		/login						controllers.TaskController.welcome
+
+POST	/tasks						controllers.TaskController.taskPage

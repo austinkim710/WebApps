@@ -1,0 +1,63 @@
+package controllers
+
+import javax.inject.Inject
+import javax.inject.Singleton
+import play.api.data.Form
+import play.api.data.Forms.mapping
+import play.api.data.Forms.number
+import play.api.mvc.MessagesAbstractController
+import play.api.mvc.MessagesControllerComponents
+import play.api.data._
+import play.api.data.Forms._
+
+case class UserData(username: String, password: String)
+
+@Singleton
+class TaskController @Inject() (cc: MessagesControllerComponents) extends MessagesAbstractController(cc) {
+
+
+  val userForm = Form(
+  mapping(
+    "username" -> nonEmptyText,
+    "password" -> nonEmptyText
+    )(UserData.apply)(UserData.unapply)
+  )
+  def create() = Action { implicit request =>
+    userForm.bindFromRequest.fold(
+      formWithErrors => BadRequest,
+      user => Ok("User OK!"))
+  }
+
+  val userdata = Map(
+    "name" -> "Box of paper clips",
+    "ean" -> "1234567890123",
+    "pieces" -> "300"
+  )
+
+
+
+  /*
+  val userPost = Action(parse.form(userForm)) { implicit request =>
+    val userData = request.body
+    val newUser = models.UserData(userData.username, userData.password)
+    //val id = models.UserData.create(newUser)
+    //Redirect(routes.Application.home(id))
+  }
+*/
+
+
+
+  def welcome = Action { implicit request =>
+    println(request.session)
+    Ok(views.html.loginpage())
+  }//2. we need to go to routes from here
+
+
+  def taskPage = Action { implicit request =>
+    Ok(views.html.taskPage())
+
+  }
+
+
+
+}
