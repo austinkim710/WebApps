@@ -1,0 +1,101 @@
+body {
+  text-align: center;
+  text-decoration: none;
+  color: #000000;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  margin-left: 0px;
+  margin-right: 0px;
+  font-family: 'Hack';
+}
+@font-face {
+  font-family: 'Hack';
+  src: url('Hack-Regular.ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.header {
+    background-color: #f1f1f1;
+    text-align: center;
+}
+
+.hvr-grow {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px transparent;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-property: transform;
+  transition-property: transform;
+}
+
+.hvr-grow:hover, .hvr-grow:focus, .hvr-grow:active {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.middle{
+  position: relative;
+  align-items: center;
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 15px 0px 15px 0px;
+    overflow: hidden;
+    background-color: #ad1818;
+    position: sticky;
+    z-index: 5;
+    top: 0;
+    width: 100%;
+    text-align: right;
+    font-size: 14px;
+
+}
+
+.nav li {
+    display: inline-block;
+    padding: 5px 30px 0px 0px;
+}
+
+.nav li a{
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.nav li a:hover {
+  color: #ff7272;
+}
+
+.logo{
+  color: #FFFFFF;
+  float: left;
+  padding-left: 400px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.parallax{
+  background-image:  url('emirates-stadium-arsenal.jpg');
+  height: 700px;
+  width: 100%;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.75;
+}
+
+.about {
+  position: relative;
+  text-align: center;
+  vertical-align: center;
+}
+
+

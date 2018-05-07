@@ -1,0 +1,29 @@
+@()(implicit request: RequestHeader)
+
+@main("Drawing With Scala JS!") {
+  <head>
+    <title>Austin Kim | Trinity University 2018 - Computer Science Major</title>
+    <link rel="stylesheet" media="screen" href="@routes.Assets.versioned("stylesheets/website.css")">
+    </style>
+  </head>
+
+
+  <body>
+    <ul class="nav">
+      <div class="logo">
+        Austin Kim
+      </div>
+
+      <li><a href="index.html" class="hvr-grow">Home</a></li>
+      <li><a href="AboutMe.html" class="hvr-grow">About Me</a></li>
+      <li><a href="Tasks.html" class="hvr-grow">Tasks</a></li>
+      <li><a href="Contact.html" class="hvr-grow" style="margin-right: 260px;">Contact</a></li>
+    </ul>
+
+    <p>Scala JS Canvas</p>
+	<button type="button" id="red">Red</button>
+   
+    <canvas id="gameSpace" width="800" height="600"></canvas>
+    @scalajs.html.scripts("CSCI3345-S18-client", routes.Assets.versioned(_).toString, name => getClass.getResource(s"/public/$name") != null)
+  </body>
+}

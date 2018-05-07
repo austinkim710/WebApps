@@ -1,0 +1,41 @@
+@* tempWelcome Template File *@
+@(msg: String, tempRangeForm: Form[TempRange])(implicit request: MessagesRequestHeader)
+
+@main("Temperatures") {
+	<h2>Temperature Data</h2>
+	<p>This should be a cool app in a few days.</p>
+	<p>The message of the day is: @msg</p>
+	
+	<form id="table-form" action="@routes.TempController.tempTable()" method="POST">
+	  @helper.CSRF.formField
+	  Month:<input type="text" name="month">
+	  Year:<input type="text" name="year">
+	  <input type="submit" value="Submit">
+	</form>
+	
+	@helper.form(action = helper.CSRF(routes.TempController.tempPlotPage())) {
+	  @helper.inputText(tempRangeForm("startMonth"))
+	  @helper.inputText(tempRangeForm("startYear"))
+	  @helper.inputText(tempRangeForm("endMonth"))
+	  @helper.inputText(tempRangeForm("endYear"))
+	  <input type="submit" value="Submit">
+	}
+	
+	<p>
+		<input type="date" id="ajaxDate">
+		<input type="hidden" id="ajaxURL" value="@{routes.TempController.singleDayInfo("").toString.dropRight(1)}">
+		<button id="getDay">Get Daily Data</button>
+	</p>
+	<p id="dayInfo"></p>
+	
+	@* This is a Twirl comment. We want to add 1 and 2.  *@
+	@defining(1+2) { sum =>
+	  <p>The sum is @sum.</p>
+	  <p>Using @sum again.</p>
+	}
+	<p>mlewis@@trinity.edu</p>
+}
+
+@* This is used for the standard JavaScript approach to Ajax
+<script type="text/javascript" src="@routes.Assets.versioned("javascripts/tempAjax.js")"></script>
+*@
